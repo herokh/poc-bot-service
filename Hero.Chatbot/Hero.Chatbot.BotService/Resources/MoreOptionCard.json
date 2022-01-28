@@ -1,0 +1,30 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "size": "Medium",
+      "weight": "Bolder",
+      "text": "Please select the following Option"
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3",
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Manage Booking",
+      "data": "Manage booking"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Extra Service",
+      "data": "Extra service"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Live Chat",
+      "data": "Live chat"
+    }
+  ]
+}

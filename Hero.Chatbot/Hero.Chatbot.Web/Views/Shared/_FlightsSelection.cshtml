@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNetCore.Http
+@using Hero.Chatbot.Web.Extensions
+@using Hero.Chatbot.Web.Constants
+
+@model IEnumerable<FlightViewModel>
+
+@{ 
+    var state = Context.Session.Get<FlightBookingStateViewModel>(SessionKeyConsts.FlightBookingState);
+}
+
+@if (Model.Any())
+{
+    <div class="border">
+        <div class="row">
+
+            @foreach (var flight in Model)
+            {
+            <div class="col-12 d-flex mt-2">
+                <div class="col">
+                    <img src="~/images/mobipax.png" width="80" height="80" />
+                </div>
+                <div class="col d-flex flex-column">
+                    <span>@flight.FormattedPeriod</span>
+                    <span>@flight.FlightNumber</span>
+                </div>
+                <div class="col d-flex flex-column">
+                    <span>@flight.FormattedTotalDuration</span>
+                    <span>@flight.Origin - @flight.Destination</span>
+                </div>
+                <div class="col d-flex flex-column">
+                    <span>Nonstop</span>
+                </div>
+                <div class="col d-flex flex-column">
+                    <span>THB @flight.FormattedPrice</span>
+                    <span>round trip</span>
+                </div>
+                <div class="col d-flex flex-column">
+                    <div class="text-center">
+                        <a asp-controller="FlightBooking" asp-action="@state.NextStep"
+                           asp-route-departureTime="@flight.DepartureDateTime"
+                           asp-route-arrivalTime="@flight.ArrivalDateTime"
+                           asp-route-amount="@flight.Amount"
+                           class="btn btn-outline-primary">Select</a>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <span>Flight not found!</span>
+    </div>
+}
+

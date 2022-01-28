@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Flight Booking Page";
+}
+
+@model PassengerInfoViewModel
+
+<div>
+    <div class="mb-4">
+        <strong>Please fill-in passenger info</strong>
+    </div>
+
+    <div>
+        <form asp-controller="FlightBooking" asp-action="SelectPayment" method="post">
+            <div class="form-group">
+                <label for="firstName">First name *</label>
+                <input type="text" class="form-control" id="firstName" asp-for="FirstName">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last name *</label>
+                <input type="text" class="form-control" id="lastName" asp-for="LastName">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+    </div>
+</div>
