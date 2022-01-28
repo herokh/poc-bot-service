@@ -1,0 +1,209 @@
+﻿{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Container",
+              "backgroundImage": "https://messagecardplayground.azurewebsites.net/assets/TxP_Background.png",
+              "items": [
+                {
+                  "type": "Image",
+                  "horizontalAlignment": "center",
+                  "url": "https://messagecardplayground.azurewebsites.net/assets/TxP_Flight.png",
+                  "altText": "Departing airplane"
+                }
+              ],
+              "bleed": true
+            },
+            {
+              "type": "Container",
+              "spacing": "none",
+              "style": "emphasis",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "size": "extraLarge",
+                  "weight": "lighter",
+                  "color": "Accent",
+                  "text": "Flight to ${ArrivalIataCode}",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "small",
+                  "text": "${AirlineName}  Air Lines flight ${FlightNumber} ",
+                  "wrap": true
+                },
+                {
+                  "type": "TextBlock",
+                  "spacing": "none",
+                  "text": "${DurationHours} hours ${DurationMinutes} minutes",
+                  "wrap": true
+                }
+              ],
+              "bleed": true,
+              "height": "stretch"
+            }
+          ],
+          "width": 45,
+          "height": "stretch"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Container",
+              "height": "stretch",
+              "items": [
+                {
+                  "type": "ColumnSet",
+                  "columns": [
+                    {
+                      "type": "Column",
+                      "items": [
+                        {
+                          "type": "TextBlock",
+                          "size": "extraLarge",
+                          "weight": "lighter",
+                          "text": "${DepartureIataCode}",
+                          "wrap": true
+                        }
+                      ],
+                      "width": "auto"
+                    },
+                    {
+                      "type": "Column",
+                      "verticalContentAlignment": "center",
+                      "items": [
+                        {
+                          "type": "Image",
+                          "url": "https://messagecardplayground.azurewebsites.net/assets/graydot2x2.png",
+                          "width": "10000px",
+                          "height": "2px"
+                        }
+                      ],
+                      "width": "stretch"
+                    },
+                    {
+                      "type": "Column",
+                      "spacing": "small",
+                      "verticalContentAlignment": "center",
+                      "items": [
+                        {
+                          "type": "Image",
+                          "url": "https://messagecardplayground.azurewebsites.net/assets/smallairplane.png",
+                          "height": "16px"
+                        }
+                      ],
+                      "width": "auto"
+                    },
+                    {
+                      "type": "Column",
+                      "items": [
+                        {
+                          "type": "TextBlock",
+                          "horizontalAlignment": "right",
+                          "size": "extraLarge",
+                          "weight": "lighter",
+                          "text": "${ArrivalIataCode}",
+                          "wrap": true
+                        }
+                      ],
+                      "width": "auto"
+                    }
+                  ]
+                },
+                {
+                  "type": "ColumnSet",
+                  "columns": [
+                    {
+                      "type": "Column",
+                      "items": [
+                        {
+                          "type": "RichTextBlock",
+                          "inlines": [
+                            {
+                              "type": "TextRun",
+                              "size": "medium",
+                              "text": "{{TIME(${formatDateTime(DepartureTime, 'yyyy-MM-ddTHH:mm:ssZ')})}} \n",
+                              "wrap": true
+                            },
+                            {
+                              "type": "TextRun",
+                              "text": "{{DATE(${formatDateTime(DepartureTime, 'yyyy-MM-ddTHH:mm:ssZ')}, SHORT)}} \n",
+                              "isSubtle": true,
+                              "wrap": true
+                            },
+                            {
+                              "type": "TextRun",
+                              "text": "${DepartureCityName}",
+                              "isSubtle": true,
+                              "wrap": true
+                            }
+                          ]
+                        }
+                      ],
+                      "width": 1
+                    },
+                    {
+                      "type": "Column",
+                      "items": [
+                        {
+                          "type": "RichTextBlock",
+                          "horizontalAlignment": "right",
+                          "inlines": [
+                            {
+                              "type": "TextRun",
+                              "size": "medium",
+                              "text": "{{TIME(${formatDateTime(ArrivalTime, 'yyyy-MM-ddTHH:mm:ssZ')})}} \n",
+                              "wrap": true
+                            },
+                            {
+                              "type": "TextRun",
+                              "text": "{{DATE(${formatDateTime(ArrivalTime, 'yyyy-MM-ddTHH:mm:ssZ')}, SHORT)}} \n",
+                              "isSubtle": true,
+                              "wrap": true
+                            },
+                            {
+                              "type": "TextRun",
+                              "text": "${ArrivalCityName}",
+                              "isSubtle": true,
+                              "wrap": true
+                            }
+                          ]
+                        }
+                      ],
+                      "width": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "ActionSet",
+                  "separator": true,
+                  "actions": [
+                    {
+                      "type": "Action.OpenUrl",
+                      "title": "Book Now",
+                      "style": "positive",
+                      "url": "https://www.airasia.com/select/en/gb/${ArrivalIataCode}/${DepartureIataCode}/${formatDateTime(ArrivalTime, 'yyyy-MM-dd')}/${formatDateTime(DepartureTime, 'yyyy-MM-dd')}/1/0/0/R/N/THB/ST"
+                    }
+                  ],
+                  "spacing": "medium"
+                }
+              ]
+            }
+          ],
+          "width": 55
+        }
+      ],
+      "height": "stretch"
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.3"
+}

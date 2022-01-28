@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Flight Booking Page";
+}
+
+@model FlightSearchResultViewModel
+
+<div>
+    <div class="mb-4">
+        <strong>Please select departure time on @Model.FormattedDepartureDate</strong>
+        @await Html.PartialAsync("_FlightsSelection", Model.Flights)
+    </div>
+
+    <div>
+        <a asp-controller="FlightSearch" asp-action="Index" class="btn btn-outline-info">Back</a>
+    </div>
+</div>
