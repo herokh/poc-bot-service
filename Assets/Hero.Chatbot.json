@@ -1,0 +1,257 @@
+{
+  "luis_schema_version": "7.0.0",
+  "intents": [
+    {
+      "name": "Check availability",
+      "features": []
+    },
+    {
+      "name": "Check information",
+      "features": []
+    },
+    {
+      "name": "Manage booking",
+      "features": []
+    },
+    {
+      "name": "None",
+      "features": []
+    }
+  ],
+  "entities": [
+    {
+      "name": "Destination",
+      "children": [],
+      "roles": [],
+      "features": []
+    },
+    {
+      "name": "Origin",
+      "children": [],
+      "roles": [],
+      "features": []
+    },
+    {
+      "name": "ProductType",
+      "children": [],
+      "roles": [],
+      "features": []
+    }
+  ],
+  "hierarchicals": [],
+  "composites": [],
+  "closedLists": [],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    }
+  ],
+  "utterances": [
+    {
+      "text": "bangkok - chiang mai next week",
+      "intent": "Check availability",
+      "entities": [
+        {
+          "entity": "Origin",
+          "startPos": 0,
+          "endPos": 6,
+          "children": []
+        },
+        {
+          "entity": "Destination",
+          "startPos": 10,
+          "endPos": 19,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "bangkok - chiang mai on next week",
+      "intent": "Check availability",
+      "entities": [
+        {
+          "entity": "Origin",
+          "startPos": 0,
+          "endPos": 6,
+          "children": []
+        },
+        {
+          "entity": "Destination",
+          "startPos": 10,
+          "endPos": 19,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "bangkok chiang mai next week",
+      "intent": "Check availability",
+      "entities": [
+        {
+          "entity": "Origin",
+          "startPos": 0,
+          "endPos": 6,
+          "children": []
+        },
+        {
+          "entity": "Destination",
+          "startPos": 8,
+          "endPos": 17,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "bangkok to chiang mai next week",
+      "intent": "Check availability",
+      "entities": [
+        {
+          "entity": "Origin",
+          "startPos": 0,
+          "endPos": 6,
+          "children": []
+        },
+        {
+          "entity": "Destination",
+          "startPos": 11,
+          "endPos": 20,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "check flight",
+      "intent": "Check availability",
+      "entities": []
+    },
+    {
+      "text": "check flight from bangkok to chiang mai on next week",
+      "intent": "Check availability",
+      "entities": [
+        {
+          "entity": "Origin",
+          "startPos": 18,
+          "endPos": 24,
+          "children": []
+        },
+        {
+          "entity": "Destination",
+          "startPos": 29,
+          "endPos": 38,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "check flight from chiang mai to bangkok",
+      "intent": "Check availability",
+      "entities": [
+        {
+          "entity": "Origin",
+          "startPos": 18,
+          "endPos": 27,
+          "children": []
+        },
+        {
+          "entity": "Destination",
+          "startPos": 32,
+          "endPos": 38,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "check information",
+      "intent": "Check information",
+      "entities": []
+    },
+    {
+      "text": "i want to check flight from chiang mai to bangkok on tomorrow.",
+      "intent": "Check availability",
+      "entities": [
+        {
+          "entity": "Origin",
+          "startPos": 28,
+          "endPos": 37,
+          "children": []
+        },
+        {
+          "entity": "Destination",
+          "startPos": 42,
+          "endPos": 48,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want to check flight from cnx to dmk on tomorrow.",
+      "intent": "Check availability",
+      "entities": [
+        {
+          "entity": "Origin",
+          "startPos": 28,
+          "endPos": 30,
+          "children": []
+        },
+        {
+          "entity": "Destination",
+          "startPos": 35,
+          "endPos": 37,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want to fly from bangkok to chiang mai on next week",
+      "intent": "Check availability",
+      "entities": [
+        {
+          "entity": "Origin",
+          "startPos": 19,
+          "endPos": 25,
+          "children": []
+        },
+        {
+          "entity": "Destination",
+          "startPos": 30,
+          "endPos": 39,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "i want to see the hotel information",
+      "intent": "Check information",
+      "entities": [
+        {
+          "entity": "ProductType",
+          "startPos": 18,
+          "endPos": 22,
+          "children": []
+        }
+      ]
+    },
+    {
+      "text": "manage booking",
+      "intent": "Manage booking",
+      "entities": []
+    },
+    {
+      "text": "please show my booking on 31/12/2021",
+      "intent": "Manage booking",
+      "entities": []
+    }
+  ],
+  "versionId": "0.1",
+  "name": "Hero.Chatbot",
+  "desc": "Luis Model for BotService",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "phraselists": [],
+  "regex_features": [],
+  "patterns": [],
+  "settings": []
+}

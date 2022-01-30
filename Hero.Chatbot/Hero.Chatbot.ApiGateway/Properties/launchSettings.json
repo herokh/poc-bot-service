@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "HeroChatbot.CMS.Api": {
+    "Hero.Chatbot.ApiGateway": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",

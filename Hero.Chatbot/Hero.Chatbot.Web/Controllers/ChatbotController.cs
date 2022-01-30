@@ -12,11 +12,11 @@ namespace Hero.Chatbot.Web.Controllers
         private const string SpeechToken = "speech_token";
 
         private readonly ISession _session;
-        private readonly IHeroChatbotCMSApiClient _heroChatbotCMSApiClient;
-        public ChatbotController(IHeroChatbotCMSApiClient heroChatbotCMSApiClient,
+        private readonly IHeroChatbotCMSApiClient _apiGateway;
+        public ChatbotController(IHeroChatbotCMSApiClient apiGateway,
             IHttpContextAccessor httpContextAccessor)
         {
-            _heroChatbotCMSApiClient = heroChatbotCMSApiClient;
+            _apiGateway = apiGateway;
             _session = httpContextAccessor.HttpContext.Session;
         }
 
@@ -26,14 +26,14 @@ namespace Hero.Chatbot.Web.Controllers
             var conversationToken = _session.GetString(ConversationToken);
             if (conversationToken == null)
             {
-                conversationToken = (await _heroChatbotCMSApiClient.GenerateToken2Async()).Token;
+                conversationToken = (await _apiGateway.GenerateToken2Async()).Token;
                 _session.SetString(ConversationToken, conversationToken);
             }
 
             var speechToken = _session.GetString(SpeechToken);
             if (speechToken == null)
             {
-                speechToken = (await _heroChatbotCMSApiClient.GenerateTokenAsync()).Token;
+                speechToken = (await _apiGateway.GenerateTokenAsync()).Token;
                 _session.SetString(SpeechToken, speechToken);
             }
 
