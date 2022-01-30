@@ -1,4 +1,4 @@
-﻿# HeroChatbot.FlightBooking
+﻿# Hero.Chatbot.BotService
 
 Bot Framework v4 empty bot sample.
 
@@ -15,11 +15,11 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 
 ## To try this sample
 
-- In a terminal, navigate to `HeroChatbot.FlightBooking`
+- In a terminal, navigate to `HHero.Chatbot.BotService`
 
     ```bash
     # change into project folder
-    cd HeroChatbot.FlightBooking
+    cd Hero.Chatbot.BotService
     ```
 
 - Run the bot from a terminal or from Visual Studio, choose option A or B.
@@ -35,8 +35,8 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 
   - Launch Visual Studio
   - File -> Open -> Project/Solution
-  - Navigate to `HeroChatbot.FlightBooking` folder
-  - Select `HeroChatbot.FlightBooking.csproj` file
+  - Navigate to `Hero.Chatbot.BotService` folder
+  - Select `Hero.Chatbot.BotService.csproj` file
   - Press `F5` to run the project
 
 ## Testing the bot using Bot Framework Emulator

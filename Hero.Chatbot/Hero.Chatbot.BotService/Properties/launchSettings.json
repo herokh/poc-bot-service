@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iis": {
-      "applicationUrl": "http://herochatbot",
+      "applicationUrl": "http://localhost",
       "sslPort": 0
     },
     "iisExpress": {
@@ -31,7 +31,7 @@
     },
     "IIS": {
       "commandName": "IIS",
-      "workingDirectory": "http://herochatbot"
+      "workingDirectory": "http://localhost"
     }
   }
 }

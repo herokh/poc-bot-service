@@ -25,20 +25,20 @@ namespace Hero.Chatbot.BotService
         {
             services.AddControllers().AddNewtonsoftJson();
 
-            services.AddApplicationInsightsTelemetry(options =>
-            {
-                options.InstrumentationKey = Configuration["ApplicationInsightsInstrumentationKey"];
-                options.EndpointAddress = Configuration["ApplicationInsightsEndpointAddress"];
-            });
+            //services.AddApplicationInsightsTelemetry(options =>
+            //{
+            //    options.InstrumentationKey = Configuration["ApplicationInsightsInstrumentationKey"];
+            //    options.EndpointAddress = Configuration["ApplicationInsightsEndpointAddress"];
+            //});
 
-            services.AddLogging(builder =>
-            {
-                builder.Services.AddApplicationInsightsTelemetry(options =>
-                {
-                    options.InstrumentationKey = Configuration["ApplicationInsightsInstrumentationKey"];
-                    options.EndpointAddress = Configuration["ApplicationInsightsEndpointAddress"];
-                });
-            });
+            //services.AddLogging(builder =>
+            //{
+            //    builder.Services.AddApplicationInsightsTelemetry(options =>
+            //    {
+            //        options.InstrumentationKey = Configuration["ApplicationInsightsInstrumentationKey"];
+            //        options.EndpointAddress = Configuration["ApplicationInsightsEndpointAddress"];
+            //    });
+            //});
 
             services.AddCors(a => a.AddPolicy("allowAll", p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 
